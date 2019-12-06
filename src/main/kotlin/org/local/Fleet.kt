@@ -14,9 +14,7 @@ class Fleet(val modules: List<Int>) {
         .sum()
 
     private fun adjustForFuelMass(mass: Int): Int  {
-        if (mass <= 6) {
-            return mass;
-        }
+        if (mass <= 6) return mass
 
         return adjustForFuelMass(calculateFuelToCarryModule(mass)) + mass
     }
